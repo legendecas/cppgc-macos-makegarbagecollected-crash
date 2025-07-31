@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node-gyp configure -- -f ninja && ninja -C build/Release",
+    "test": "node -p \"require('./build/Release/my_module.node')\""
+  },
+  "devDependencies": {
+    "node-gyp": "^11.2.0"
+  }
+}
