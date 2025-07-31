@@ -1,8 +1,19 @@
 # cppgc macOS MakeGarbageCollected Crash
 
 Requirements:
-- `node` is built with Xcode <= 16.2 (which is already the case for v22.x)
+- `node` is built with Xcode <= 16.2 (both clang and SDK) (which is already the case for v22.x)
 - Have Xcode >= 16.3 locally
+
+Tested matrix:
+- Node compiled with apple clang 17, SDK 15.5, no crash.
+- Node compiled with apple clang 16, SDK 15.5, no crash (clang in PATH via `sudo xcode-select -s <path_to>/Xcode_16.2.app`).
+- Node compiled with apple clang 16, SDK 15.2, crash (clang in PATH, set `CXX_FLAG=-isysroot $(xcrun --sdk macosx --show-sdk-path)`).
+- Node compiled with apple clang 17, SDK 15.2, (not test yet).
+
+With:
+- Addon clang 17, SDK 15.5.
+
+## Run locally
 
 Run the following commands to reproduce:
 
