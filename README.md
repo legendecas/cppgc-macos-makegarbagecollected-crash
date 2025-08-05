@@ -5,13 +5,15 @@ Requirements:
 - Have Xcode >= 16.3 locally
 
 Tested matrix:
-- Node compiled with apple clang 17, SDK 15.5, no crash.
-- Node compiled with apple clang 16, SDK 15.5, no crash (clang in PATH via `sudo xcode-select -s <path_to>/Xcode_16.2.app`).
-- Node compiled with apple clang 16, SDK 15.2, crash (clang in PATH, set `CXX_FLAG=-isysroot $(xcrun --sdk macosx --show-sdk-path)`).
-- Node compiled with apple clang 17, SDK 15.2, (not test yet).
 
-With:
-- Addon clang 17, SDK 15.5.
+ - | Addon apple clang 16 | Addon apple clang 17
+--- | --- | ---
+Node.js apple clang 17, SDK 15.5 | ✅ | ✅
+Node.js apple clang 16, SDK 15.5 | ✅ | ✅
+Node.js apple clang 16, SDK 15.2 | ✅ | ❌
+
+- Node compiled with apple clang 16, SDK 15.5 (clang in PATH via `sudo xcode-select -s <path_to>/Xcode_16.2.app`).
+- Node compiled with apple clang 16, SDK 15.2 (clang in PATH, set `LD_FLAGS` and `CXX_FLAG` to `-isysroot $(xcrun --sdk macosx --show-sdk-path)`).
 
 ## Run locally
 
