@@ -6,7 +6,7 @@ Requirements:
 
 Tested matrix:
 
- - | Addon apple clang 16 | Addon apple clang 17
+ Toolchain | Addon apple clang 16 | Addon apple clang 17
 --- | --- | ---
 Node.js apple clang 17, SDK 15.5 | ✅ | ✅
 Node.js apple clang 16, SDK 15.5 | ✅ | ✅
